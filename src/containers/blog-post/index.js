@@ -16,6 +16,7 @@ import Rating from '@material-ui/lab/Rating';
 const BlogPost = (props) => {
     let blogData = props.match.params && props.getBlog(props.match.params.blogId);
     let currentBlog = props.currentBlog || blogData;
+    
     return (
         <div className="main-container-blog-post">
             <div className="blog-post-container">

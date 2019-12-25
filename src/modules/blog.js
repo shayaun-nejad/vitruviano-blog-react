@@ -57,11 +57,14 @@ const initialState = {
 
   export const getBlog = (blogId) => {
       return dispatch => {
-          axios.get(`https://u27h2k967c.execute-api.us-east-1.amazonaws.com/prod/blog/${blogId}`).then(response => {
+          axios.get(`https://rp5sec0lw9.execute-api.us-east-1.amazonaws.com/latest/blog/${blogId}`).then(response => {
               dispatch({
                   type: GET_BLOG,
                   blog: response.data,
               })
+          })
+          .catch(error => {
+              console.log(error);
           })
       }
   }

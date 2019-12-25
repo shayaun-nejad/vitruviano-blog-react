@@ -1,0 +1,40 @@
+.back-button {
+    cursor: pointer;
+}
+
+.blog-post-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 10vh
+}
+
+.blog-post-container > * {
+    margin: 5px;
+    margin-left: 2vh;
+    font-family: Poppins-Black;
+}
+
+.challenge-card {
+    align-self: center;
+    background-color: aliceblue;
+    padding: 5vh;
+    box-shadow: 0px 16px 25px 0px rgba(118, 88, 198, 0.1);
+    border-radius: 16px;
+
+}
+
+.challenge-card > * {
+    text-align: left;
+}
+
+.main-container-blog-post {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-post-body {
+    text-align: left;
+    padding: 10px;
+    margin: 10px;
+}

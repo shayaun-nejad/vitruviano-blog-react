@@ -1,13 +1,19 @@
 import React from 'react';
-
 import './BlogCard.css';
 import Rating from '@material-ui/lab/Rating';
 import Button from '../../../components/common/Button';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import {
+    setBlog,
+  } from '../../../modules/blog';
 
 
 
 const BlogCard = (props) => {
-    if (!props.category) return null
+    if (!props.category) return null;
+    console.log(props)
     return (
         <div className="card-container">
             <div className="card-title">
@@ -21,14 +27,16 @@ const BlogCard = (props) => {
             <div className="card-info">
                 <div className="card-details">
                 <p className="card-details-info">
-                    <span> 12/20/1995 </span>
+                    <span> {props.blog.date} </span>
                     <br/>
                     <span> Status: <span className="card-status">{props.status} </span></span>
                 </p>
                 <div className="rating-container">
-                     <p>Difficulty:  <span><Rating name="read-only" value={3} readOnly /></span></p> 
+                     <p>Difficulty:  <span><Rating name="read-only" value={props.blog.rating} readOnly /></span></p> 
                 </div>
-                <Button variant="contained" color="secondary">Read More</Button>
+                <Button variant="contained" color="secondary" onClick={() => {
+                    props.setBlog(props.blog);
+                    }}>Read More</Button>
                 </div>
                 <div className="card-img">
                     <img src='./logo192.png' alt="hey" />
@@ -39,5 +47,21 @@ const BlogCard = (props) => {
     )
 }
 
-export default BlogCard;
+const mapStateToProps = ({ blog }) => ({
+    currentBlog: blog,
+  })
+  
 
+  const mapDispatchToProps = dispatch =>
+    bindActionCreators(
+      {
+        setBlog,
+      },
+      dispatch
+    )
+  
+  export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(BlogCard)
+  

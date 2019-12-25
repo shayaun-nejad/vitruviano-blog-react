@@ -16,6 +16,7 @@ const BlogBlock = (props) => {
                         title={blocks[0].title} 
                         description={blocks[0].description}
                         status={blocks[0].status}
+                        blog={blocks[0]}
 
                     />
             </div>
@@ -25,12 +26,14 @@ const BlogBlock = (props) => {
                         title={blocks[1].title} 
                         description={blocks[1].description}
                         status={blocks[1].status}
+                        blog={blocks[1]}
                     />
                     <BlogCard 
                         category={blocks[2].category}
                         title={blocks[2].title} 
                         description={blocks[2].description}
                         status={blocks[2].status}
+                        blog={blocks[2]}
                     />
             </div>
         </div>

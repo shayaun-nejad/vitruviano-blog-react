@@ -1,7 +1,10 @@
 import { push } from 'connected-react-router';
+import axios from 'axios';
 
 export const SET_BLOG_POST = 'SET_BLOG_POST';
 export const UNSET_BLOG_POST = 'UNSET_BLOG_POST';
+
+export const GET_BLOG = 'GET_BLOG';
 
 
 const initialState = {
@@ -20,6 +23,11 @@ const initialState = {
           ...state,
           currentBlog: {},
         }
+      case GET_BLOG:
+        return {
+            ...state,
+            currentBlog: action.blog,
+        }
       default:
         return state
     }
@@ -32,7 +40,7 @@ const initialState = {
             blog: blog,
         });
 
-        dispatch(push('blog-post'))
+        dispatch(push('blog-post/1'))
 
 
     }
@@ -43,6 +51,17 @@ const initialState = {
           dispatch({
               type: UNSET_BLOG_POST,
               blog: {},
+          })
+      }
+  }
+
+  export const getBlog = (blogId) => {
+      return dispatch => {
+          axios.get(`https://u27h2k967c.execute-api.us-east-1.amazonaws.com/prod/blog/${blogId}`).then(response => {
+              dispatch({
+                  type: GET_BLOG,
+                  blog: response.data,
+              })
           })
       }
   }

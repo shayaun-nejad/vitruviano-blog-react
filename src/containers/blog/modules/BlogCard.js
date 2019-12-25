@@ -39,7 +39,7 @@ const BlogCard = (props) => {
                     }}>Read More</Button>
                 </div>
                 <div className="card-img">
-                    <img src='./logo192.png' alt="hey" />
+                    <img src={props.blog.imageUrl} alt="hey" />
                 </div>
             </div>
             

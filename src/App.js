@@ -16,7 +16,7 @@ function App() {
         <main className="meat">
             <Route exact path="/" component={Blog} />
             <Route exact path="/about-us" component={About} />
-            <Route exact path="/blog-post" component={BlogPost} />
+            <Route exact path="/blog-post/:blogId" component={BlogPost} />
         </main>
     </div>
   );

@@ -1,0 +1,50 @@
+.header-container {
+    display: flex;
+    flex: .02;
+    justify-content: flex-start;
+    max-height: 15vh;
+}
+
+.img {
+    height: 100%;
+    width: 70%;
+}
+
+.navigation {
+    display: inherit;
+    align-items: center;
+}
+
+.navigation > * {
+    margin: 10px;
+    font-weight: bolder;
+    text-decoration: none;
+    color: black;
+    font-family: Poppins-Black; 
+}
+
+.navigation-container {
+    display: inherit;
+    align-items: flex-end;
+    border-bottom: 1px solid rgba(0, 0, 0, .4);
+
+    flex: .8;
+}
+
+.img-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 5px;
+    flex: .2;
+    margin: 5px;
+}
+
+
+.selected {
+    color: rgba(0, 0, 0, 1);
+}
+
+.unselected {
+    color: rgba(0, 0, 0, .4)
+}

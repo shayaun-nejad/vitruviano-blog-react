@@ -11,3 +11,9 @@ code {
   font-family: Poppins, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+h4, h5, h6, h1, h2, h3 {
+  font-family: Poppins-Black;
+}
+

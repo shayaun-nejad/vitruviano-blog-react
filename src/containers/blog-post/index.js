@@ -15,7 +15,7 @@ import Rating from '@material-ui/lab/Rating';
 
 const BlogPost = (props) => {
     let blogData = props.match.params && props.getBlog(props.match.params.blogId);
-    let currentBlog = props.currentBlog || blogData;
+    let currentBlog = blogData || props.currentBlog;
     
     return (
         <div className="main-container-blog-post">
@@ -34,7 +34,24 @@ const BlogPost = (props) => {
                 </p>
             </div>
             <div className="blog-post-body"> 
-                {currentBlog.body && currentBlog.body.map(paragraph => <p>&emsp; {paragraph}</p>) } 
+                <div className="challenge-card">
+                    <h3>Introduction</h3>
+                    {currentBlog.body && currentBlog.body.map(paragraph => <p>&emsp; {paragraph}</p>) } 
+                </div>
+                <div className="challenge-card">
+                    <h3>Hypothesis</h3>
+                    {currentBlog.hypothesis && currentBlog.hypothesis.map(paragraph => <p>&emsp; {paragraph}</p>) } 
+                </div>
+                <div className="challenge-card">
+                    <h3>Materials</h3>
+                    <ul>
+                        {
+                            currentBlog.materials && currentBlog.materials.map(paragraph => {
+                                return <li><p>{paragraph}</p></li>
+                            })
+                        }                        
+                    </ul>
+                </div>
             </div>
         </div>
     )

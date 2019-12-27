@@ -21,8 +21,12 @@ class Blog extends Component {
                 `I remember growing up I would push 13-14 hours a day to beat games like Assassin’s Creed. Let’s see if we can channel some of that positive (negative??) energy into weight loss.`,
                 `I’ll keep a daily log of weight, amount of activity, and which games played. At the beginning of the month, I’ll take a picture of my weight before the challenge and also one after.`,
                 `Diet is a huge component of weight loss. So I’ll keep my diet constant. For good measure, I’ll log my diet and do a follow-up where I keep the same diet for a month after but with no Oculus exercise. I’ll then calculate the rate of weight loss with the Quest vs. without the Quest, and we can see for certain whether or not the Oculus is a good option for weight loss.`
-            ],
-
+                ],
+                hypothesis: [`My guess is that adhering to a Oculus Routine for 30 days will have a positive impact on my health.`],
+                materials: [`Weight Vest (150 lbs)`, `Oculus Quest`, `DEXA scan`, `Weight Scale`, 'Beat Saber', 'Creed'],
+                experimentDesign: [`Measure weight with scale and DEXA before starting the 30 days`, `At 8 AM every day, do 2 matches in Creed, and 2 high speed songs in Beat Saber`, `Measure weight with scale and DEXA after starting the 30 days`],
+                implementation: [],
+                conclusion: [],
             },
 
         ],

@@ -13,7 +13,7 @@ import {
 
 const BlogCard = (props) => {
     if (!props.category) return null;
-    console.log(props)
+
     return (
         <div className="card-container">
             <div className="card-title">

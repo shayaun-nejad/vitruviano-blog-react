@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { goBack } from 'connected-react-router'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -13,14 +13,18 @@ import backButton from './back-button.svg';
 import './Blogpost.css';
 import Rating from '@material-ui/lab/Rating';
 
-const BlogPost = (props) => {
-    let blogData = props.match.params && props.getBlog(props.match.params.blogId);
-    let currentBlog = blogData || props.currentBlog;
-    
-    return (
-        <div className="main-container-blog-post">
+class BlogPost extends Component {
+    componentDidMount() {
+        this.blogData = this.props.match.params && this.props.getBlog(this.props.match.params.blogId);
+    }
+
+    render() {
+        let currentBlog = this.blogData || this.props.currentBlog;
+
+        return (
+            <div className="main-container-blog-post">
             <div className="blog-post-container">
-                <img src={backButton} onClick={props.goBack} className="back-button"/>
+                <img src={backButton} onClick={this.props.goBack} className="back-button"/>
                 <h2>{currentBlog.title}</h2>
             </div>
             <div className="challenge-card">
@@ -54,7 +58,8 @@ const BlogPost = (props) => {
                 </div>
             </div>
         </div>
-    )
+        )
+    }
 }
 const mapStateToProps = ({ blog }) => ({
     currentBlog: blog.currentBlog,

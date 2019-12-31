@@ -9,9 +9,9 @@ export const GET_BLOG = 'GET_BLOG';
 
 const initialState = {
     currentBlog: {},
-  }
+}
   
-  export default (state = initialState, action) => {
+export default (state = initialState, action) => {
     switch (action.type) {
       case SET_BLOG_POST:
         return {
@@ -57,6 +57,7 @@ const initialState = {
 
   export const getBlog = (blogId) => {
       return dispatch => {
+          console.log('dispatched')
           axios.get(`https://rp5sec0lw9.execute-api.us-east-1.amazonaws.com/latest/blog/${blogId}`).then(response => {
               dispatch({
                   type: GET_BLOG,

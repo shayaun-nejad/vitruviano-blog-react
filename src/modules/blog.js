@@ -41,8 +41,6 @@ const initialState = {
         });
 
         dispatch(push('blog-post/1'))
-
-
     }
   }
 

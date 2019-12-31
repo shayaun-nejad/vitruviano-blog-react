@@ -10,9 +10,6 @@ import * as serviceWorker from './serviceWorker';
 
 const target = document.getElementById('root');
 
-const whyDidYouRender = require('@welldone-software/why-did-you-render');
-whyDidYouRender(React);
-
 render(
     <Provider store={store}>
         <ConnectedRouter history={history}>

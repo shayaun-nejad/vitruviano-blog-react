@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { goBack } from 'connected-react-router'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -13,10 +13,11 @@ import backButton from './back-button.svg';
 import './Blogpost.css';
 import Rating from '@material-ui/lab/Rating';
 
-class BlogPost extends Component {
+class BlogPost extends PureComponent {
     componentDidMount() {
-        this.blogData = this.props.match.params && this.props.getBlog(props.match.params.blogId);
+        // this.blogData = this.props.match.params && this.props.getBlog(props.match.params.blogId);
     }
+
     render() {
         let currentBlog = this.blogData || this.props.currentBlog;
     

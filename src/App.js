@@ -9,7 +9,7 @@ import About from './containers/about';
 
 import './App.css';
 
-function App() {
+function App() {  
   return (
     <div className="App">
         <Header />

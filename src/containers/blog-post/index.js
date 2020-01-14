@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+
+import Disqus from 'disqus-react';
+
 import { goBack } from 'connected-react-router'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -20,6 +23,13 @@ class BlogPost extends Component {
 
     render() {
         let currentBlog = this.blogData || this.props.currentBlog;
+        const disqusShortname = "vitruviano-blog" //found in your Disqus.com dashboard
+        const disqusConfig = {
+          url: 'https://vitruviano.io' || (this.props.match.params && `https://vitruviano.io/blog-post/${this.props.match.params.blogId}`), //this.props.pageUrl
+          identifier: `vitruviano:::${this.props.match.params && this.props.match.params.blogId}`, //this.props.uniqueId
+          title: `${currentBlog.title}` //this.props.title
+        }
+    
 
         return (
             <div className="main-container-blog-post">
@@ -56,6 +66,33 @@ class BlogPost extends Component {
                         }                        
                     </ul>
                 </div>
+                <div className="challenge-card">
+                    <h3>Experimental Design</h3>
+                    <ul>
+                        {
+                            currentBlog.materials && currentBlog.materials.map(paragraph => {
+                                return <li><p>{paragraph}</p></li>
+                            })
+                        }                        
+                    </ul>
+                </div>
+                <div className="challenge-card">
+                    <h3>Implementation and Changelog</h3>
+                    {
+                        currentBlog.implementation && currentBlog.implementation.map(paragraph => {
+                            return <>
+                            <h4>{paragraph.title}</h4>
+                            <p>
+                                {paragraph.body}
+                            </p>
+                            </>
+                        })
+                    }
+                </div>
+                <Disqus.DiscussionEmbed
+                    shortname={disqusShortname}
+                    config={disqusConfig}
+                />
             </div>
         </div>
         )

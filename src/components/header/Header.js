@@ -46,11 +46,11 @@ class Header extends Component {
       <div className="navigation-container">
         <div className="navigation">
               <Link to="/about-us" onClick={this.hubSelect} className={hub}>The Hub</Link>
-              <Link to="/" className={community}>Community</Link>
-              <Link to="/" className={products}>Products</Link>
+              <Link to="/about-us" className={community}>Community</Link>
+              <Link to="/about-us" className={products}>Products</Link>
               <Link to="/" onClick={this.blogSelect} className={blog}>Blog</Link>
-              <Link to="/" className={courses}>Courses</Link>
-              <Link to="/" className={settings}>Settings</Link>
+              <Link to="/about-us" className={courses}>Courses</Link>
+              <Link to="/about-us" className={settings}>Settings</Link>
         </div>
       </div>
   </div>

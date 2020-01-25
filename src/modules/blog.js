@@ -40,7 +40,7 @@ export default (state = initialState, action) => {
             blog: blog,
         });
 
-        dispatch(push('blog-post/1'))
+        dispatch(push('blog-post/vr-challenge'))
 
 
     }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 
 import Disqus from 'disqus-react';
 
@@ -33,6 +34,9 @@ class BlogPost extends Component {
 
         return (
             <div className="main-container-blog-post">
+            <Helmet>
+                <title>{currentBlog.title}</title>
+            </Helmet>
             <div className="blog-post-container">
                 <img src={backButton} onClick={this.props.goBack} className="back-button"/>
                 <h2>{currentBlog.title}</h2>
